@@ -43,7 +43,7 @@ export class AuthService {
     );
   }
 
-  public register(formData: IRegistrationRequest): Observable<IMessageResponse>{
+  public register(formData: IRegistrationRequest): Observable<IMessageResponse> {
     return this.http.post<IMessageResponse>(`${this.baseUrl}/auth/register`, formData)
   }
 
@@ -55,7 +55,7 @@ export class AuthService {
     });
   }
 
-  callCurrentUserFromEffect() {
+  public callCurrentUserFromEffect(): void {
     this.store.dispatch(UserActions.startLoading());
   }
 
